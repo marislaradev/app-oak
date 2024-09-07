@@ -13,7 +13,7 @@ function DeliveryForm() {
 
     await axios.post("http://localhost:3000/deliveries", payload);
     console.log("Entrega registrada com sucesso!");
-    resetForm(); // Limpa o formulário após a submissão
+    resetForm();
   } catch (error) {
     console.error("Erro ao registrar a entrega:", error);
   }
@@ -23,8 +23,7 @@ function DeliveryForm() {
     data_entrega: Yup.date().required("Campo obrigatório"),
     tipo_entrega: Yup.string().required("Campo obrigatório"),
     numero_pedido: Yup.string()
-    .matches(/^\d{9}$/, "O número do pedido deve ter exatamente 9 dígitos")
-    .nullable(),
+    .matches(/^\d{9}$/, "O número do pedido deve ter exatamente 9 dígitos"),
     entregador_id: Yup.string()
       .required("Campo obrigatório"),
     nome_atendente: Yup.string()
