@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        greenOak: '#2D9983',
-        greenBtn: '#264f42',
-        greenLetter: '47aa4d'
+        greenOak: '#143C8D',
+        greenBtn: '#0F1453',
+        greenLetter: '#F66816'
       }
     },
   },
