@@ -22,7 +22,9 @@ function DeliveryForm() {
   const validationSchema = Yup.object().shape({
     data_entrega: Yup.date().required("Campo obrigatório"),
     tipo_entrega: Yup.string().required("Campo obrigatório"),
-    numero_pedido: Yup.string(),
+    numero_pedido: Yup.string()
+    .matches(/^\d{9}$/, "O número do pedido deve ter exatamente 9 dígitos")
+    .nullable(),
     entregador_id: Yup.string()
       .required("Campo obrigatório"),
     nome_atendente: Yup.string()
