@@ -9,7 +9,7 @@ export default {
       colors: {
         greenOak: '#143C8D',
         greenBtn: '#0F1453',
-        greenLetter: '#F66816'
+        greenLetter: '#F1F1F1'
       }
     },
   },

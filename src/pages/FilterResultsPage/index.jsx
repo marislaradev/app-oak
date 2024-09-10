@@ -54,32 +54,31 @@ const FilterResultsPage = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center w-full bg-greenOak dark:bg-gray-950">
-      <div className="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">
+      <div className="bg-greenLetter dark:bg-gray-900 shadow-md rounded-lg px-6 py-6 mt-10 mb-10">
         <h1 className="text-2xl font-bold text-center mb-4 dark:text-gray-200">
-          Resultados do Filtro
+          Resultados da busca
         </h1>
         {view === 'detailed' ? (
           <div>
-            <h2 className="text-xl font-bold mb-4">Detalhes das Entregas</h2>
-            <ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {deliveries.length > 0 ? (
                 deliveries.map((delivery, index) => (
-                  <li key={index} className="mb-2">
+                  <div key={index} className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
                     <p><strong>Data:</strong> {new Date(delivery.data_entrega).toLocaleDateString('pt-BR')}</p>
                     <p><strong>Tipo de Entrega:</strong> {delivery.tipo_entrega}</p>
                     <p><strong>Número do Pedido:</strong> {delivery.numero_pedido || 'N/A'}</p>
                     <p><strong>Entregador:</strong> {delivery.entregador_nome}</p>
                     <p><strong>Nome do Atendente:</strong> {delivery.nome_atendente}</p>
-                  </li>
+                  </div>
                 ))
               ) : (
                 <p>Nenhuma entrega encontrada.</p>
               )}
-            </ul>
+            </div>
           </div>
         ) : (
           <div>
-            <h2 className="text-xl font-bold mb-4">Resumo das Entregas</h2>
+            <h2 className="text-xl font-bold mb-4 text-center">Resumo das Entregas</h2>
             <ul>
               {stats.length > 0 ? (
                 stats.map((stat, index) => (
